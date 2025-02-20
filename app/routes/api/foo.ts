@@ -16,8 +16,11 @@ export const APIRoute = createAPIFileRoute('/api/foo')({
     console.log('FETCHING...')
 
     await new Promise((resolve) => setTimeout(resolve, 2000))
+
+    console.log('RETURNED SUCCESS BUT IS Signal aborted?', signal.aborted)
+
     return json({
-      data: 'DATA IS FOO!',
+      data: 'API: DATA IS FOO!',
     })
   },
 })
